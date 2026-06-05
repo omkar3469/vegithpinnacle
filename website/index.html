@@ -1,0 +1,637 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Vegith Pinnacle Services — Coming Soon</title>
+
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Google Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap"
+    rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #f8fafc;
+      color: #0f172a;
+      overflow-x: hidden;
+    }
+
+    /* =========================
+       LOADER
+    ========================== */
+
+    #loader {
+      position: fixed;
+      inset: 0;
+      background: #ffffff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      transition: 0.6s ease;
+    }
+
+    .loader-logo {
+      width: 100px;
+      max-width: 80%;
+      animation:
+        zoomIn 1.2s ease forwards,
+        floatLogo 3s ease-in-out infinite;
+
+      filter: drop-shadow(0 0 20px rgba(244, 197, 8, 0.6));
+    }
+
+    .loader-line {
+      width: 0;
+      height: 4px;
+      margin-top: 30px;
+      border-radius: 999px;
+
+      background: linear-gradient(90deg,
+          #d4a117,
+          #f7d774,
+          #d4a117);
+
+      animation: loading 2.5s ease forwards;
+
+      box-shadow: 0 0 20px rgba(212, 161, 23, 0.6);
+    }
+
+    body.loaded #loader {
+      opacity: 0;
+      visibility: hidden;
+    }
+
+    @keyframes zoomIn {
+      0% {
+        opacity: 0;
+        transform: scale(0.7);
+      }
+
+      100% {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes floatLogo {
+
+      0%,
+      100% {
+        transform: translateY(0px);
+      }
+
+      50% {
+        transform: translateY(-8px);
+      }
+    }
+
+    @keyframes loading {
+      0% {
+        width: 0;
+        opacity: 0;
+      }
+
+      20% {
+        opacity: 1;
+      }
+
+      100% {
+        width: 240px;
+        opacity: 1;
+      }
+    }
+
+    /* =========================
+       MAIN CONTAINER
+    ========================== */
+
+    .main-wrapper {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+
+      background:
+        radial-gradient(circle at top left,
+          rgba(212, 175, 55, 0.12),
+          transparent 30%),
+
+        radial-gradient(circle at bottom right,
+          rgba(37, 99, 235, 0.08),
+          transparent 30%),
+
+        linear-gradient(to bottom,
+          #ffffff,
+          #f8fafc);
+    }
+
+    /* GRID */
+
+    .grid {
+      position: absolute;
+      inset: 0;
+
+      background-image:
+        linear-gradient(rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+        linear-gradient(90deg,
+          rgba(15, 23, 42, 0.03) 1px,
+          transparent 1px);
+
+      background-size: 60px 60px;
+
+      z-index: 0;
+    }
+
+    /* GLOW */
+
+    .glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(120px);
+      z-index: 0;
+    }
+
+    .glow-1 {
+      width: 400px;
+      height: 400px;
+      background: rgba(212, 175, 55, 0.15);
+      top: -120px;
+      left: -100px;
+    }
+
+    .glow-2 {
+      width: 450px;
+      height: 450px;
+      background: rgba(37, 99, 235, 0.10);
+      bottom: -150px;
+      right: -100px;
+    }
+
+    /* =========================
+       HERO SECTION
+    ========================== */
+
+    .hero-section {
+      position: relative;
+      z-index: 2;
+      min-height: 100vh;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      text-align: center;
+
+      padding: 80px 15px;
+    }
+
+    .hero-content {
+      width: 100%;
+      max-width: 950px;
+    }
+
+    /* LOGO */
+
+    .logo-box {
+      margin-bottom: 45px;
+    }
+
+    .logo-box img {
+      width:22%;
+      max-width: 420px;
+      height: auto;
+    }
+
+    /* BADGE */
+
+    .badge-custom {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+
+      padding: 12px 22px;
+
+      border-radius: 999px;
+
+      background: rgba(212, 175, 55, 0.12);
+
+      border: 1px solid rgba(212, 175, 55, 0.25);
+
+      color: #b8860b;
+
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+
+      margin-bottom: 30px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: #d4af37;
+      animation: pulse 1.6s infinite;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        opacity: 1;
+      }
+
+      100% {
+        transform: scale(2);
+        opacity: 0;
+      }
+    }
+
+    /* HEADING */
+
+    .hero-title {
+      font-size: clamp(40px, 8vw, 72px);
+      line-height: 1.1;
+      font-weight: 800;
+      letter-spacing: -2px;
+      margin-bottom: 25px;
+      color: #0f172a;
+    }
+
+    .gold-text {
+      background: linear-gradient(to right,
+          #d4af37,
+          #f6d365);
+
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* DESCRIPTION */
+
+    .hero-description {
+      max-width: 720px;
+      margin: auto;
+
+      color: #64748b;
+
+      font-size: clamp(16px, 2vw, 20px);
+      line-height: 1.8;
+    }
+
+    /* BUTTONS */
+
+    .hero-buttons {
+      margin-top: 45px;
+      gap: 18px;
+    }
+
+    .btn-custom {
+      height: 55px;
+      padding: 0 32px;
+      border-radius: 999px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 15px;
+      font-weight: 700;
+
+      text-decoration: none;
+
+      transition: 0.3s ease;
+    }
+
+    .btn-gold {
+      background: #d4af37;
+      color: #0f172a;
+
+      box-shadow: 0 10px 30px rgba(212, 175, 55, 0.35);
+    }
+
+    .btn-gold:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(212, 175, 55, 0.45);
+    }
+
+    .btn-outline-custom {
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      background: white;
+      color: #0f172a;
+    }
+
+    .btn-outline-custom:hover {
+      border-color: #d4af37;
+      color: #d4af37;
+    }
+
+    /* FEATURES */
+
+    .features-box {
+      margin-top: 60px;
+
+      border-radius: 22px;
+      overflow: hidden;
+
+      border: 1px solid rgba(15, 23, 42, 0.06);
+    }
+
+    .feature-item {
+      background: rgba(255, 255, 255, 0.6);
+      padding: 30px 20px;
+
+      border-right: 1px solid rgba(15, 23, 42, 0.06);
+
+      transition: 0.3s ease;
+    }
+
+    .feature-item:hover {
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .feature-item:last-child {
+      border-right: none;
+    }
+
+    .feature-item small {
+      display: block;
+
+      color: #64748b;
+
+      text-transform: uppercase;
+
+      letter-spacing: 2px;
+
+      margin-bottom: 10px;
+
+      font-size: 11px;
+    }
+
+    .feature-item span {
+      font-size: 18px;
+      font-weight: 700;
+      color: #0f172a;
+    }
+
+    /* FOOTER */
+
+    footer {
+      margin-top: 45px;
+      color: #64748b;
+      font-size: 14px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 991px) {
+
+      .feature-item {
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+      }
+
+      .feature-item:nth-child(2) {
+        border-right: none;
+      }
+    }
+
+    @media (max-width: 767px) {
+
+      .hero-section {
+        padding: 100px 20px;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn-custom {
+        width: 100%;
+      }
+
+      .feature-item {
+        border-right: none;
+      }
+
+      .logo-box img {
+        max-width: 300px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =========================
+       LOADER
+  ========================== -->
+
+  <div id="loader">
+
+    <img src="image/Vegith Pinnacle Logo.png"
+      alt="Vegith Pinnacle Logo"
+      class="loader-logo" />
+
+    <div class="loader-line"></div>
+
+  </div>
+
+  <!-- =========================
+       MAIN CONTENT
+  ========================== -->
+
+  <div class="main-wrapper">
+
+    <div class="grid"></div>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <!-- HERO -->
+
+    <section class="hero-section">
+
+      <div class="container">
+
+        <div class="hero-content mx-auto">
+
+          <!-- LOGO -->
+
+          <div class="logo-box">
+
+            <img src="image/Vegith Pinnacle full Logo.png"
+              alt="Vegith Pinnacle">
+
+          </div>
+
+          <!-- BADGE -->
+
+          <div class="badge-custom">
+
+            <span class="dot"></span>
+
+            Launching Soon
+
+          </div>
+
+          <!-- TITLE -->
+
+          <h1 class="hero-title">
+
+            A New Standard
+
+            <br>
+
+            <span class="gold-text">
+              Is Arriving.
+            </span>
+
+          </h1>
+
+          <!-- DESCRIPTION -->
+
+          <p class="hero-description">
+
+            Vegith Pinnacle Services Pvt. Ltd. is evolving into a premium enterprise
+            brand focused on workforce solutions, staffing, facility management,
+            business support services, and scalable operational excellence.
+
+          </p>
+
+          <!-- BUTTONS -->
+
+          <div class="hero-buttons d-flex justify-content-center flex-wrap">
+
+            <a href="#"
+              class="btn-custom btn-gold">
+
+              Launching Soon →
+
+            </a>
+
+            <a href="mailto:contact@vegithpinnacle.com"
+              class="btn-custom btn-outline-custom">
+
+              Contact Us
+
+            </a>
+
+          </div>
+
+          <!-- FEATURES -->
+
+          <div class="features-box">
+
+            <div class="row g-0">
+
+              <div class="col-md-3 col-6">
+
+                <div class="feature-item">
+
+                  <small>Workforce</small>
+
+                  <span>Solutions</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-3 col-6">
+
+                <div class="feature-item">
+
+                  <small>Facility</small>
+
+                  <span>Management</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-3 col-6">
+
+                <div class="feature-item">
+
+                  <small>Business</small>
+
+                  <span>Support</span>
+
+                </div>
+
+              </div>
+
+              <div class="col-md-3 col-6">
+
+                <div class="feature-item">
+
+                  <small>Scalable</small>
+
+                  <span>Growth</span>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- FOOTER -->
+
+          <footer>
+
+            © 2026 Vegith Pinnacle Services Pvt. Ltd.
+            All rights reserved.
+
+          </footer>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- Loader Script -->
+
+  <script>
+
+    window.addEventListener("load", () => {
+
+      setTimeout(() => {
+
+        document.body.classList.add("loaded");
+
+      }, 3000);
+
+    });
+
+  </script>
+
+</body>
+
+</html>
