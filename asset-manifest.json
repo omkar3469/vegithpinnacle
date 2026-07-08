@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/static/css/main.8c4f16e7.css",
+    "main.js": "/static/js/main.e5bafbad.js",
+    "static/media/vegith-logo.png": "/static/media/vegith-logo.6da973377e98ced447e3.png",
+    "index.html": "/index.html",
+    "main.8c4f16e7.css.map": "/static/css/main.8c4f16e7.css.map",
+    "main.e5bafbad.js.map": "/static/js/main.e5bafbad.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8c4f16e7.css",
+    "static/js/main.e5bafbad.js"
+  ]
+}
