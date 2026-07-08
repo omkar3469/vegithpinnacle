@@ -1,0 +1,33 @@
+import { Outlet } from "react-router-dom";
+import GridBackground from "@/components/GridBackground";
+import ScrollProgress from "@/components/ScrollProgress";
+import ScrollToTop from "@/components/ScrollToTop";
+import Header from "@/components/sections/Header";
+import Footer from "@/components/sections/Footer";
+import { Toaster } from "sonner";
+
+export default function Layout() {
+  return (
+    <div className="App" data-testid="site-root">
+      <GridBackground />
+      <ScrollProgress />
+      <ScrollToTop />
+      <Header />
+      <main className="relative z-10 min-h-[70vh]">
+        <Outlet />
+      </main>
+      <Footer />
+      <Toaster
+        theme="dark"
+        position="top-right"
+        toastOptions={{
+          style: {
+            background: "#0b1d3a",
+            border: "1px solid rgba(212,168,67,0.4)",
+            color: "#ffffff",
+          },
+        }}
+      />
+    </div>
+  );
+}

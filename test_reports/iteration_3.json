@@ -1,0 +1,33 @@
+{
+  "summary": "Iteration 3 targeted retest of Presence map marker overlap fix. All acceptance criteria PASS. Bhiwandi marker is now visually offset NE with a dashed leader line back to its true coord (110,290) -> displayed at (175,258). Clicking map-marker-mumbai, map-marker-bhiwandi, and map-marker-kolkata each correctly activates ONLY the matching office-card (navy gradient / text-white state). Contact-form regression also PASS: POST /api/contact returned 200 and form cleared.",
+  "backend_issues": { "critical": [], "minor": [] },
+  "frontend_issues": {
+    "ui_bugs": [],
+    "integration_issues": [],
+    "design_issues": []
+  },
+  "features_verified": [
+    "map-marker-mumbai click -> office-card-mumbai ACTIVE (navy gradient, text-white); others inactive -- PASS",
+    "map-marker-bhiwandi click -> office-card-bhiwandi ACTIVE; others inactive -- PASS",
+    "map-marker-kolkata click -> office-card-kolkata ACTIVE; others inactive -- PASS",
+    "Bhiwandi marker visually offset NE of Mumbai; no bbox overlap on the SVG dot region; dashed leader line rendered from (110,290) to (175,258) with stroke-dasharray='3 3' in #f0c454 -- PASS",
+    "Office card click regression (mumbai/bhiwandi/kolkata) all correctly toggle active card -- PASS",
+    "Contact form full submit: POST {REACT_APP_BACKEND_URL}/api/contact returned HTTP 200, submit button flow OK, name field cleared post-submit -- PASS"
+  ],
+  "test_report_links": [
+    "/app/backend/tests/test_contact_api.py (from iter 2, still passes as regression)"
+  ],
+  "action_items": [],
+  "critical_code_review_comments": [
+    "Presence.jsx: only the tiny solid dot (r=6/8, ~18px) is now pointer-enabled — the label text and pulse-ring correctly have pointerEvents='none'. Consider adding a small transparent <circle r=14> hitbox (pointer-events:auto) centered on each dot to enlarge the click target to ~28px for better human ergonomics, without re-introducing overlap between Mumbai & Bhiwandi. Right now real users can also click the office card on the right (which works), so this is a minor UX polish, not a blocker.",
+    "server.py: /api/contact still lacks rate-limit/captcha (carried over from iter 2 comments) — recommend adding slowapi or Turnstile before public launch to prevent MS Graph email abuse."
+  ],
+  "updated_files": [],
+  "success_rate": { "backend": "N/A (skipped per request)", "frontend": "100% (all 5 targeted checks + regression PASS)" },
+  "test_credentials": "N/A - no auth in app",
+  "seed_data_creation": "One additional MS Graph email was sent to it.support@vegithglobal.com as part of the contact-form regression (payload marked 'QA Iter3 Retest').",
+  "retest_needed": false,
+  "should_main_agent_self_test": false,
+  "context_for_next_testing_agent": "Iteration-3 retest of Presence map is DONE and PASSING. The fix in Presence.jsx (leader line + pointerEvents:none on halo/text) works correctly. If future testing needs to click the SVG map markers via Playwright, do NOT use element.click() with force=True on the <g data-testid='map-marker-*'> — that clicks the geometric bbox center which now lands on the pointer-events:none label. Instead: find the solid dot circle (the child <circle> with stroke='#0b1d3a') via querySelector, take getBoundingClientRect(), and use page.mouse.click(center.x, center.y). Alternatively click the office-card-<city> which also toggles the active state and is much easier to target.",
+  "rca_of_the_issue": "Iter-2 issue was that Mumbai and Bhiwandi marker <g> bboxes overlapped, so the topmost <g> (Bhiwandi) captured all clicks. Iter-3 fix: (a) moved Bhiwandi marker position from ~(110,290) to (175,258) so the dots no longer overlap; (b) added an anchor dot + dashed leader line back to the real coord so the geographic accuracy is preserved; (c) set pointerEvents:'none' on the pulse-halo <circle> and label <text> so ONLY the tiny inner dot receives clicks — this prevents the wide label boxes from stealing pointer events from adjacent markers. Verified end-to-end with click at dot coords: mumbai/bhiwandi/kolkata each activate the correct office card independently."
+}

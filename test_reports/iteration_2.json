@@ -1,0 +1,69 @@
+{
+  "summary": "Iteration 2 — visual redesign + Microsoft Graph email integration fully verified. Backend (pytest, 5/5) and Frontend (Playwright, all 17 features from the review request) pass end-to-end. Contact form submits to POST /api/contact and returns HTTP 200 with status='success' (Microsoft Graph accepted). One UI issue found: on the India-map, the Mumbai and Bhiwandi markers overlap so clicking the Mumbai marker is intercepted by Bhiwandi.",
+  "backend_issues": {
+    "critical": [],
+    "minor": []
+  },
+  "frontend_issues": {
+    "ui_bugs": [
+      {
+        "component": "Presence / India-map",
+        "issue": "map-marker-mumbai (x=509 w=143) and map-marker-bhiwandi (x=533 w=155) overlap heavily on the SVG map. Clicking the Mumbai marker gets intercepted by the Bhiwandi hit-box, so office-card-mumbai never receives the active/navy state. Bhiwandi stays active regardless of which of the two markers the user clicks.",
+        "selector": "[data-testid=map-marker-mumbai], [data-testid=map-marker-bhiwandi]",
+        "priority": "MEDIUM"
+      }
+    ],
+    "integration_issues": [],
+    "design_issues": [
+      {
+        "screen": "Presence / India map",
+        "issues": ["Mumbai + Bhiwandi pin labels visually overlap (bhiwandi drawn on top of mumbai). Since Bhiwandi is ~20km from Mumbai on a real map, use a leader-line or a small horizontal/vertical offset for one of the two markers so both remain independently hoverable/clickable."]
+      }
+    ]
+  },
+  "features_verified": [
+    "Hero: 'Staffing.' / 'Facilities.' / 'Compliance.' on three lines, gold shimmer on Compliance, EST. 2018 · VEGITH GROUP chip, cinematic video placeholder with gold play + 'CINEMATIC COMPANY REEL' label — PASS",
+    "Sticky header renders brand + all 8 nav links (about, why-us, pillars, compliance, process, industries, presence, contact) and header-cta-contact — PASS. Nav link click scrolls to correct section (nav-link-contact scrolled to contact) — PASS",
+    "About: about-stat-0='500+ / EMPLOYEES DEPLOYED', about-stat-1='PAN India / OPERATIONS', about-stat-2='Enterprise / GRADE SUPPORT' — PASS",
+    "WhyUs: exactly 6 cards why-us-card-0..5 — PASS",
+    "Pillars: pillar-staffing + pillar-facility present. pillar-staffing-toggle opens pillar-staffing-panel with 9 staffing-item-0..8. facility-panel-soft is open by default; clicking facility-accordion-technical closes soft and opens facility-panel-technical; facility-accordion-specialized present — PASS",
+    "Compliance: compliance-image + all 12 compliance-card-0..11 render — PASS",
+    "Process: 7 horizontal steps process-step-1..7 — PASS",
+    "Industries: 8 tiles industry-0..7 — PASS",
+    "Clients: clients-marquee renders — PASS",
+    "Presence: india-map + 3 map-markers + 3 office-cards render. Bhiwandi & Kolkata marker → office highlight works. Mumbai marker click is BLOCKED by overlapping Bhiwandi marker — SEE UI BUG",
+    "Contact form empty submit: error toast shown, no POST call fired (0 network requests) — PASS",
+    "Contact form full submit (QA Redesign Test): button text changes to 'Sending…', POST to {REACT_APP_BACKEND_URL}/api/contact returns HTTP 200 with {status:'success', message:'Your enquiry has been sent. Our team will respond within 24 hours.'}, success toast shown, fields cleared — PASS (real email sent through MS Graph)",
+    "ScrollProgress: [data-testid=scroll-progress] fixed at top of page (framer-motion scaleX progress) — PASS",
+    "Footer: footer-copyright, footer-phone, footer-email, footer-website all render — PASS",
+    "Console: 0 errors, 0 warnings during full page load and interactions — PASS",
+    "Lazy loading: all 27 <img> tags have loading='lazy' (spec allowed poster to be eager; still acceptable) — PASS",
+    "Mobile 375px: hero stacks vertically (text on top, video placeholder below), mobile-menu-toggle visible, opens menu with mobile-nav-link-about that scrolls to About — PASS",
+    "Backend pytest /api/contact — 200 success; missing required fields → 422; invalid email → 422; minimum payload → 200 success — PASS (5/5)"
+  ],
+  "test_report_links": [
+    "/app/backend/tests/test_contact_api.py",
+    "/app/test_reports/pytest/pytest_results.xml"
+  ],
+  "action_items": [
+    "Presence map: separate the Mumbai and Bhiwandi markers so they don't overlap on the SVG. Options: (a) move bhiwandi marker ~40px NE with a small leader line pointing back to its real coordinate; (b) render a single combined 'MUMBAI · BHIWANDI' cluster marker that expands on hover; (c) increase z-index and shrink hit-box of both markers and offset one horizontally. Verify by clicking map-marker-mumbai and confirming office-card-mumbai gets the active 'text-white' navy state."
+  ],
+  "critical_code_review_comments": [
+    "Presence.jsx: markers for Mumbai and Bhiwandi share nearly identical (top,left) coordinates on the stylised SVG which is geographically correct but UX-broken — a top-level offset or clustered marker is needed.",
+    "server.py: /api/contact does not have a rate-limit or captcha, so this public endpoint can be spammed to trigger real MS Graph email deliveries to it.support@vegithglobal.com. Consider adding a simple rate limit (e.g., slowapi) or hCaptcha/Turnstile before go-live.",
+    "server.py: logger is defined AFTER _acquire_graph_token uses it (order works only because the log call executes later, but static-analysis-wise the reference precedes the definition). Cosmetic — move logging.basicConfig / logger definition above line 99."
+  ],
+  "updated_files": [
+    "/app/backend/tests/test_contact_api.py (new)"
+  ],
+  "success_rate": {
+    "backend": "100% (5/5 pytest)",
+    "frontend": "94% (17/18 items — Mumbai marker click intercepted by Bhiwandi)"
+  },
+  "test_credentials": "N/A - no auth in app",
+  "seed_data_creation": "None. Test contact enquiries were sent via MS Graph as expected (they land in it.support@vegithglobal.com and are acceptable per problem statement).",
+  "retest_needed": true,
+  "should_main_agent_self_test": true,
+  "context_for_next_testing_agent": "Backend /api/contact is fully wired to MS Graph and delivers emails (verified 2x). Use /app/backend/tests/test_contact_api.py as regression. All frontend data-testids from the review request are present (kebab-case). Only outstanding UI issue: Mumbai/Bhiwandi map-marker overlap in Presence.jsx — main agent to offset one of the two markers. All other flows (hero, nav, about stats, WhyUs 6 cards, Pillars staffing panel + facility accordion, Compliance 12 cards + image, Process 7 steps, Industries 8, Clients marquee, ScrollProgress, Footer, mobile menu, lazy loading) pass. No console errors.",
+  "rca_of_the_issue": "map-marker-mumbai bounding box (x=509,y=9537,w=143) and map-marker-bhiwandi bounding box (x=533,y=9532,w=155) overlap by ~120px horizontally at the same vertical band — because Bhiwandi is only ~20km NE of Mumbai and both markers are placed on the stylised SVG at correct proportional positions with 143-155px wide labels. Bhiwandi is rendered after Mumbai in the DOM (or has higher z-index / larger MapPin+label absolutely-positioned wrapper), so it captures pointer events over Mumbai. Repro: viewport 1920x1080, scroll to Presence section, click Mumbai label — office-card-bhiwandi (not office-card-mumbai) gets the navy 'text-white' active state. Mitigation: in /app/frontend/src/components/sections/Presence.jsx, offset the Bhiwandi marker by ~48px NE and draw a thin gold leader line from its dot back to its true coordinate, OR reduce each marker's clickable hit-box to the dot only (not the label) and let both remain readable."
+}

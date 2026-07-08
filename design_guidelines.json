@@ -1,0 +1,86 @@
+{
+  "theme": "dark",
+  "archetype": "5 (Luxury)",
+  "typography": {
+    "primary_font": "Playfair Display",
+    "secondary_font": "Manrope",
+    "heading_strategy": "Playfair Display, fluid scales (text-4xl to text-6xl), tracking-tight, leading-none. Used for H1, H2, H3.",
+    "body_strategy": "Manrope, text-base to text-lg, leading-relaxed, tracking-normal. Used for paragraphs, small labels, UI elements.",
+    "uppercase_labels": "tracking-[0.2em] uppercase text-xs or text-sm for overlines and tags"
+  },
+  "colors": {
+    "background": "#0A0E17",
+    "surface": "#131A26",
+    "surface_elevated": "#1A2333",
+    "primary": "#D4AF37",
+    "primary_hover": "#F0C850",
+    "text_main": "#FFFFFF",
+    "text_muted": "#9BA3AF",
+    "border": "#242E3D",
+    "border_gold_subtle": "rgba(212, 175, 55, 0.2)"
+  },
+  "spacing_and_layout": {
+    "general": "Generous spacing. Use p-8, p-12, p-16, py-24 for section paddings.",
+    "container": "max-w-7xl mx-auto px-6",
+    "grid_strategy": "Asymmetric grids for marketing sections. Bento-box style for HR & Compliance cards. Massive full-width-spanning premium cards for the TWO CORE PILLARS.",
+    "corners": "Rounded-xl or rounded-2xl for soft premium feel, or sharp edges if aiming for stricter corporate. Let's use rounded-2xl (16px) for massive pillar cards and rounded-lg for smaller cards to soften the dark enterprise theme."
+  },
+  "surfaces_and_micro_themes": {
+    "glassmorphism": "Used for sticky header and overlaid feature cards. backdrop-blur-xl bg-[#0A0E17]/70 border-b border-white/5",
+    "premium_cards": "Flat surface (#131A26) with subtle 1px border (#242E3D). On hover, border transitions to gold (#D4AF37) and slight shadow-lg glow.",
+    "pillar_cards": "Massive container (bg-[#0A0E17]), inner content wrapped in glassmorphic or rich dark navy panels. Active tabs highlight in gold.",
+    "buttons": "Primary buttons: bg-[#D4AF37] text-[#0A0E17] hover:bg-[#F0C850] transition-colors. Secondary buttons: border border-[#D4AF37] text-[#D4AF37] hover:bg-[#D4AF37]/10."
+  },
+  "motion_and_interaction": {
+    "framer_motion": "Mandatory for all sections.",
+    "scroll_reveal": "Sections fade in and translate up (y: 30 -> 0) while scrolling into view.",
+    "hover_effects": "Cards slightly lift (-translate-y-1) with border color transition to gold.",
+    "expandable_panels": "Accordion/tabs in the Two Pillars must use AnimatePresence for smooth height/opacity transitions.",
+    "process_flow": "Staggered entrance of timeline items."
+  },
+  "icons": {
+    "library": "lucide-react",
+    "style": "Stroke-based, consistent width. Use gold color for primary icons, text_muted for secondary."
+  },
+  "components": {
+    "header": "Sticky nav, backdrop blur, logo wordmark (Playfair Display), anchor links with smooth scroll.",
+    "hero": "Dark navy bg, subtle gold abstract background image (opacity 15%), large typography, dual CTAs.",
+    "about": "Grid layout. Image on left, typography on right. Company story, 2018 origin.",
+    "why_us": "Bento grid of benefits with animated icons.",
+    "core_pillars": "Section titled 'Our Core Pillars'. Two massive interactive containers. Tabbed or accordion interface inside each to switch between services (Temporary Staffing, Soft Services, etc.).",
+    "hr_compliance": "Grid of 13 premium cards (grid-cols-2 md:grid-cols-4). Each has a subtle icon, title, and hover effect.",
+    "process_timeline": "Horizontal scrolling or vertical zig-zag timeline with 14 steps. Use gold dots and connecting lines.",
+    "locations": "3 map-styled cards for Mumbai, Kolkata, Bhiwandi.",
+    "footer": "Deep navy, massive 'VEGITH PINNACLE' wordmark (text-[8vw]), links, contact info, copyright."
+  },
+  "media": {
+    "hero_background": {
+      "url": "https://images.pexels.com/photos/31650383/pexels-photo-31650383.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Abstract dark gold sphere, used as a subtle background element in hero with low opacity."
+    },
+    "staffing_pillar": {
+      "url": "https://images.pexels.com/photos/12903168/pexels-photo-12903168.jpeg",
+      "description": "Professional corporate team collaborating, used for the Staffing Services pillar card."
+    },
+    "facility_management_pillar": {
+      "url": "https://images.unsplash.com/photo-1748347568194-c8cd8edd27da?crop=entropy&cs=srgb&fm=jpg&ixid=M3w4NjA1NjZ8MHwxfHNlYXJjaHwyfHxmYWNpbGl0eSUyMG1haW50ZW5hbmNlfGVufDB8fHx8MTc4MjY3OTY2MHww&ixlib=rb-4.1.0&q=85",
+      "description": "Industrial maintenance worker, used for the Facility Management Services pillar card."
+    },
+    "about_image": {
+      "url": "https://images.pexels.com/photos/33296769/pexels-photo-33296769.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940",
+      "description": "Modern commercial building facade, used in the About section to establish premium corporate presence."
+    }
+  },
+  "testing": {
+    "data_testid_rules": "All interactive elements (buttons, links, tabs, accordion triggers, form inputs) must have a data-testid attribute in kebab-case."
+  },
+  "instructions_to_main_agent": [
+    "Use Tailwind CSS for styling and Framer Motion for animations.",
+    "Implement a smooth scroll behavior for the anchor links in the sticky header.",
+    "The 'Core Pillars' section MUST dominate the layout. Do not use small standard cards for them. Use expansive, screen-wide or container-wide UI elements where the user clicks tabs to reveal the internal list of services. Add high-end imagery.",
+    "Use the exact color hex codes provided to maintain the Deep Navy + Gold Luxury theme.",
+    "Ensure headings use Playfair Display and body uses Manrope. Add font imports via Google Fonts in index.css.",
+    "For the 14-step Process Flow, design a clean vertical timeline or a custom grid layout to prevent vertical exhaustion.",
+    "Use lucide-react for all iconography."
+  ]
+}

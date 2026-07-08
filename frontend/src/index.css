@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
+:root {
+    --bg: #060d1e;
+    --surface: #0b1d3a;
+    --navy: #0b1d3a;
+    --navy-2: #14387f;
+    --blue: #2563eb;
+    --gold: #d4a843;
+    --gold-hi: #f0c454;
+    --text: #ffffff;
+    --muted: rgba(255, 255, 255, 0.65);
+    --border: rgba(255, 255, 255, 0.08);
+    --border-gold: rgba(212, 168, 67, 0.35);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: #060d1e;
+    color: var(--text);
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    position: relative;
+}
+
+::selection {
+    background: var(--gold);
+    color: var(--navy);
+}
+
+.font-display {
+    font-family: "Playfair Display", ui-serif, Georgia, serif;
+    letter-spacing: 2px;
+}
+
+.font-body {
+    font-family: "Manrope", ui-sans-serif, system-ui, sans-serif;
+}
+
+/* Dark grid background — fixed layer behind everything */
+.vp-grid-bg {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    background-color: #060d1e;
+    background-image:
+        linear-gradient(rgba(212, 168, 67, 0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(212, 168, 67, 0.06) 1px, transparent 1px),
+        radial-gradient(
+            ellipse 90% 60% at 20% 10%,
+            rgba(20, 56, 127, 0.55) 0%,
+            transparent 55%
+        ),
+        radial-gradient(
+            ellipse 70% 50% at 90% 80%,
+            rgba(37, 99, 235, 0.28) 0%,
+            transparent 60%
+        ),
+        linear-gradient(180deg, #06132a 0%, #060d1e 60%, #04091a 100%);
+    background-size:
+        44px 44px,
+        44px 44px,
+        auto,
+        auto,
+        auto;
+    -webkit-mask-image: radial-gradient(
+        ellipse 90% 80% at 50% 40%,
+        black 60%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+    mask-image: radial-gradient(
+        ellipse 90% 80% at 50% 40%,
+        black 60%,
+        rgba(0, 0, 0, 0.7) 100%
+    );
+}
+
+.vp-glow-blob {
+    position: absolute;
+    border-radius: 9999px;
+    filter: blur(80px);
+    opacity: 0.55;
+    animation: vp-float 14s ease-in-out infinite;
+    will-change: transform;
+    mix-blend-mode: screen;
+}
+@keyframes vp-float {
+    0%,
+    100% {
+        transform: translate3d(0, 0, 0) scale(1);
+    }
+    50% {
+        transform: translate3d(30px, -40px, 0) scale(1.12);
+    }
+}
+
+/* Aurora sweep line — subtle animated gradient across screen */
+.vp-aurora {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    pointer-events: none;
+    opacity: 0.55;
+    background:
+        conic-gradient(
+            from 210deg at 50% 60%,
+            rgba(20, 56, 127, 0) 0deg,
+            rgba(20, 56, 127, 0.25) 90deg,
+            rgba(212, 168, 67, 0.15) 180deg,
+            rgba(37, 99, 235, 0.18) 270deg,
+            rgba(20, 56, 127, 0) 360deg
+        );
+    filter: blur(120px);
+    animation: vp-aurora-rot 40s linear infinite;
+}
+@keyframes vp-aurora-rot {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+/* Glass surfaces (dark) */
+.vp-glass {
+    background: rgba(11, 29, 58, 0.55);
+    backdrop-filter: blur(18px) saturate(140%);
+    -webkit-backdrop-filter: blur(18px) saturate(140%);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.vp-glass-strong {
+    background: rgba(11, 29, 58, 0.75);
+    backdrop-filter: blur(22px) saturate(150%);
+    -webkit-backdrop-filter: blur(22px) saturate(150%);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.vp-soft-shadow {
+    box-shadow:
+        0 20px 60px -20px rgba(0, 0, 0, 0.55),
+        0 4px 14px -4px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.05);
+}
+
+.vp-gold-shimmer {
+    background: linear-gradient(
+        90deg,
+        #f3b422 0%,
+        #e0a716 40%,
+        #b8862b 60%,
+        #f6c035 80%,
+        #dfbb67 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    animation: vp-shimmer 2s linear infinite;
+}
+
+.footer_vegith{
+    color: white
+}
+
+@keyframes vp-shimmer {
+    to {
+        background-position: 200% center;
+    }
+}
+
+.gold-text {
+    color: var(--gold);
+}
+
+.gold-text-gradient {
+    background: linear-gradient(135deg, #d4a843 0%, #f0c454 55%, #b8862b 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.gold-hairline {
+    height: 1px;
+    background: linear-gradient(
+        90deg,
+        transparent 0%,
+        rgba(212, 168, 67, 0.65) 50%,
+        transparent 100%
+    );
+}
+
+.overline {
+    font-family: "Manrope", sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.22em;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+}
+
+.section-pad {
+    padding-top: 96px;
+    padding-bottom: 96px;
+}
+@media (min-width: 768px) {
+    .section-pad {
+        padding-top: 128px;
+        padding-bottom: 128px;
+    }
+}
+
+.container-x {
+    max-width: 1280px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 24px;
+    padding-right: 24px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 14px;
+    border-radius: 9999px;
+    font-size: 11px;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(11, 29, 58, 0.55);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 6px 20px -8px rgba(0, 0, 0, 0.5);
+}
+
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Dark-form inputs (used only in Contact) */
+.vp-dark-input {
+    background: rgba(11, 29, 58, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+}
+.vp-dark-input::placeholder {
+    color: rgba(255, 255, 255, 0.35);
+}
+.vp-dark-input:focus {
+    outline: none;
+    border-color: rgba(212, 168, 67, 0.6);
+    box-shadow: 0 0 0 3px rgba(212, 168, 67, 0.15);
+}
+
+@layer base {
+    :root {
+        --background: 224 61% 7%;
+        --foreground: 0 0% 100%;
+        --card: 220 55% 14%;
+        --card-foreground: 0 0% 100%;
+        --popover: 220 55% 14%;
+        --popover-foreground: 0 0% 100%;
+        --primary: 45 62% 55%;
+        --primary-foreground: 220 55% 14%;
+        --secondary: 220 30% 20%;
+        --secondary-foreground: 0 0% 100%;
+        --muted: 220 30% 20%;
+        --muted-foreground: 220 15% 65%;
+        --accent: 45 62% 55%;
+        --accent-foreground: 220 55% 14%;
+        --destructive: 0 84.2% 60.2%;
+        --destructive-foreground: 0 0% 98%;
+        --border: 220 20% 22%;
+        --input: 220 20% 22%;
+        --ring: 45 62% 55%;
+        --radius: 0.75rem;
+    }
+    * {
+        @apply border-border;
+    }
+}
+
+/* About-Page */
+.about-Philosophy{
+  font-family: "Playfair Display", ui-serif, Georgia, serif;
+  letter-spacing: 1px;  
+}
