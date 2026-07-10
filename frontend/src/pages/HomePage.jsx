@@ -6,6 +6,7 @@ import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { PrimaryButton, GhostButton } from "@/components/PremiumButton";
 import { SERVICE_PILLARS, INDUSTRIES, IMAGES } from "@/data/content";
 import Testimonials from "@/components/sections/Testimonials";
+import ParallaxServices from "@/components/sections/ParallaxServices";
 
 export default function HomePage() {
   return (
@@ -61,7 +62,7 @@ export default function HomePage() {
       </section>
 
       {/* SERVICES OVERVIEW — Unify's 4-card layered background */}
-      <section
+      {/* <section
         data-testid="home-services"
         className="section-pad relative"
       >
@@ -115,7 +116,9 @@ export default function HomePage() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <ParallaxServices />
 
       {/* INDUSTRIES OVERVIEW */}
       <section

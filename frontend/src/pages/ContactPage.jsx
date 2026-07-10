@@ -6,7 +6,7 @@ import { PlaceholderImage } from "@/components/PlaceholderImage";
 import { PrimaryButton } from "@/components/PremiumButton";
 import { CONTACT, OFFICES, IMAGES } from "@/data/content";
 import { toast } from "sonner";
-import Presence from "@/components/sections/Presence";
+// import Presence from "@/components/sections/Presence";
 
 const API_BASE = process.env.REACT_APP_BACKEND_URL;
 
@@ -79,7 +79,7 @@ export default function ContactPage() {
               <PlaceholderImage
                 src={IMAGES.contact}
                 alt="Vegith Pinnacle offices"
-                aspect="aspect-[4/5]"
+                aspect="aspect-[4/3]"
                 label="Get in Touch"
                 testid="contact-image"
               />
@@ -252,7 +252,7 @@ export default function ContactPage() {
       </section>
 
       {/* Interactive India Map */}
-      <Presence />
+     
     </div>
   );
 }
@@ -302,3 +302,4 @@ function Field({ label, value, onChange, type = "text", placeholder, testid }) {
     </div>
   );
 }
+

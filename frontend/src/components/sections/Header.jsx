@@ -4,7 +4,7 @@ import { Menu, X } from "lucide-react";
 import { NavLink, Link, useLocation } from "react-router-dom";
 import { NAV_LINKS } from "@/data/content";
 import { PrimaryButton } from "@/components/PremiumButton";
-import logo from "../../img/vegith-logo.png";
+import logo from "@/img/logo.png";
 
 export default function Header() {
   const [open, setOpen] = useState(false);
@@ -29,7 +29,7 @@ export default function Header() {
       data-testid="site-header"
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled
-          ? "bg-[#060d1e]/80 backdrop-blur-xl border-b border-white/10"
+          ? "bg-[#060d1e]/5 backdrop-blur-xl border-b border-white/10"
           : "bg-transparent"
       }`}
     >
