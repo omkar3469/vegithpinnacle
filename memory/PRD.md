@@ -53,3 +53,7 @@ Build a premium single-page marketing website for Vegith Pinnacle Services Pvt. 
 - P2: SEO metadata + Open Graph + sitemap
 - P3: Add photo gallery for site imagery per pillar
 - P3: Careers section with job listings
+
+    ## Implemented (2026-06)
+- ParallaxServices (`components/sections/ParallaxServices.jsx`): Unify-style full-screen pinned scroll takeover for the "Expertise That Works" services section (400vh section, sticky 100vh). Each of the 4 SERVICE_PILLARS becomes a full-viewport slide: background image crossfade + slow drift, sliding thumbnail, big animated title/tagline, "Read More" → /services, gold progress rail, scroll hint. Built with useScroll + useMotionValueEvent + AnimatePresence (no GSAP). Mobile: plain fade/translate card list.
+- Fixed broken Technical Services card image URL in content.js
