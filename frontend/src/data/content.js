@@ -3,6 +3,10 @@
 // They are placeholders — swap the `img` value in each entry with the
 // client's own photographs after development.
 import about from "../img/Kailas_sir.png";
+import staffing from "../img/Services/staffing.png";
+import softservices from "../img/Services/soft-services.png";
+import technical from "../img/Services/technical.png";
+import specialisedservice from "../img/Services/specialised-service.png";
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -230,9 +234,8 @@ export const SERVICE_PILLARS = [
     title: "Staffing Services",
     tagline: "Manpower engineered for scale",
     desc: "Temporary, permanent, payroll & pan-India workforce mobilisation for enterprises.",
-    img: "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
-    background:
-      "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
+    img: staffing,
+    background:staffing,
     items: [
       "Temporary Staffing",
       "Permanent Staffing",
@@ -250,9 +253,8 @@ export const SERVICE_PILLARS = [
     title: "Soft Services",
     tagline: "The everyday workplace experience",
     desc: "Housekeeping, pantry, front office and support staff for a spotless workplace.",
-    img: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?auto=format&fit=crop&w=1600&q=80",
-    background:
-      "https://images.unsplash.com/photo-1560264280-88b68371db39?auto=format&fit=crop&w=1600&q=80",
+    img: softservices,
+    background:softservices,
     items: [
       "Housekeeping",
       "Pantry Services",
@@ -268,9 +270,8 @@ export const SERVICE_PILLARS = [
     title: "Technical Services",
     tagline: "Engineering the reliability behind buildings",
     desc: "HVAC, electrical, plumbing, fire safety and asset upkeep by licensed engineers.",
-    img: "https://images.unsplash.com/photo-1581092919535-f1b0f4b6d1d8?auto=format&fit=crop&w=1600&q=80",
-    background:
-      "https://images.unsplash.com/photo-1581092335397-9583eb92d232?auto=format&fit=crop&w=1600&q=80",
+    img: technical,
+    background: technical,
     items: [
       "HVAC Management",
       "Electrical Operations",
@@ -288,9 +289,8 @@ export const SERVICE_PILLARS = [
     title: "Specialised Services",
     tagline: "Precision cleaning that redefines your space",
     desc: "High-rise, marble, deep cleaning and pest control for premium workplaces.",
-    img: "https://images.unsplash.com/photo-1584622650111-993a426fbf0a?auto=format&fit=crop&w=1600&q=80",
-    background:
-      "https://images.unsplash.com/photo-1587560699334-cc4ff634909a?auto=format&fit=crop&w=1600&q=80",
+    img: specialisedservice,
+    background:specialisedservice,
     items: [
       "Pest Control",
       "Façade Cleaning",
@@ -406,8 +406,7 @@ export const IMAGES = {
   heroPoster:
     "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80",
    about ,
-    staffing:
-    "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
+   staffing,
   facility:
     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",
   compliance:

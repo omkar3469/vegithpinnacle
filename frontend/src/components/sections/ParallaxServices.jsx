@@ -9,7 +9,7 @@ import {
 } from "framer-motion";
 import { Link } from "react-router-dom";
 import { ArrowUpRight } from "lucide-react";
-import { SERVICE_PILLARS } from "@/data/content";
+import { SERVICE_PILLARS, IMAGES } from "@/data/content";
 
 const N = SERVICE_PILLARS.length;
 
@@ -58,7 +58,7 @@ function MobileServices() {
               <Link to="/services" className="block group relative">
                 <div className="relative aspect-[16/10] rounded-[28px] overflow-hidden vp-soft-shadow">
                   <img
-                    src={s.img}
+                    src={IMAGES}
                     alt={s.title}
                     loading="lazy"
                     className="absolute inset-0 w-full h-full object-cover"
