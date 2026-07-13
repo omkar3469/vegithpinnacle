@@ -1,14 +1,15 @@
 {
   "files": {
-    "main.css": "/static/css/main.edcb87f9.css",
-    "main.js": "/static/js/main.8025a782.js",
+    "main.css": "/static/css/main.b187a179.css",
+    "main.js": "/static/js/main.5843450f.js",
+    "static/media/Kailas_sir.png": "/static/media/Kailas_sir.6b57ad3edf06be1ee985.png",
     "static/media/logo.png": "/static/media/logo.358fc0a91ec6671f0019.png",
     "index.html": "/index.html",
-    "main.edcb87f9.css.map": "/static/css/main.edcb87f9.css.map",
-    "main.8025a782.js.map": "/static/js/main.8025a782.js.map"
+    "main.b187a179.css.map": "/static/css/main.b187a179.css.map",
+    "main.5843450f.js.map": "/static/js/main.5843450f.js.map"
   },
   "entrypoints": [
-    "static/css/main.edcb87f9.css",
-    "static/js/main.8025a782.js"
+    "static/css/main.b187a179.css",
+    "static/js/main.5843450f.js"
   ]
 }
