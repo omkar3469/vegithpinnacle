@@ -19,16 +19,16 @@ export default function HomePage() {
         className="section-pad relative"
       >
         <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-10 lg:gap-14 items-center">
+          <div className="grid lg:grid-cols-12 gap-6 lg:gap-10 items-center pb-30px">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true, margin: "-80px" }}
+              viewport={{ once: true, margin: "-8px" }}
               transition={{ duration: 0.8 }}
-              className="lg:col-span-7"
+              className="lg:col-span-5"
             >
               <PlaceholderImage
-                src={IMAGES.about}
+                src={IMAGES}
                 alt="Vegith Pinnacle operations"
                 aspect="aspect-[4/3]"
                 label="Since 2018"
@@ -40,17 +40,17 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-80px" }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="lg:col-span-5"
+              className="lg:col-span-7"
             >
-              <div className="overline">Experience the Vegith Difference</div>
+              <div className="overline">The Vegith Pinnacle Vision</div>
               <h2 className="font-display text-4xl md:text-5xl mt-4 text-white leading-[1.05]">
-                Built for the <span className="vp-gold-shimmer">long haul.</span>
+                Commitment. <span className="vp-gold-shimmer">Dedication.</span>Delivery 
               </h2>
               <p className="mt-5 text-white/70 text-lg leading-relaxed">
-                Tailored, expert-led manpower and facility solutions that
-                streamline operations and ensure compliance — powered by six
-                years of India-wide delivery.
-              </p>
+              To become Leading Manpower & integrated Facility Management 
+              service provider and to create an employment opportunity
+               for the communities  
+               </p>
               <div className="mt-8">
                 <PrimaryButton href="/about" testid="home-about-cta">
                   Read Our Story
@@ -118,6 +118,7 @@ export default function HomePage() {
         </div>
       </section> */}
 
+      {/* Testimonials  */}
       <ParallaxServices />
 
       {/* INDUSTRIES OVERVIEW */}
@@ -128,8 +129,8 @@ export default function HomePage() {
         <div className="container-x">
           <div className="max-w-2xl mb-12">
             <div className="overline">Industries We Serve</div>
-            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 text-white leading-[1.05]">
-              Integrated workplace solutions
+            <h2 className="font-display text-4xl md:text-5xl lg:text-6xl mt-4 text-white leading-[1.05] ">
+              <span className="whitespace-nowrap">Integrated workplace solutions</span>
               <br />
               <span className="vp-gold-shimmer">across every vertical.</span>
             </h2>
@@ -200,18 +201,18 @@ export default function HomePage() {
                   Ready to partner?
                 </div>
                 <h3 className="mt-3 font-display text-3xl md:text-4xl lg:text-5xl leading-tight">
-                  Seamless facility &amp; staffing solutions for
+                  <span className="whitespace-nowrap">Seamless facility staffing solutions for</span>
                   <br />
                   <span className="vp-gold-shimmer">
                     smarter, safer, sustainable businesses.
                   </span>
                 </h3>
               </div>
-              <div className="lg:col-span-4 flex flex-wrap gap-3 lg:justify-end">
-                <PrimaryButton href="/contact" testid="home-cta-primary">
-                  Request Survey
-                </PrimaryButton>
-              </div>
+              <div className="lg:col-span-4 flex justify-end items-end h-full">
+  <PrimaryButton href="/contact" testid="home-cta-primary">
+    Request Survey
+  </PrimaryButton>
+</div>
             </div>
           </div>
         </div>

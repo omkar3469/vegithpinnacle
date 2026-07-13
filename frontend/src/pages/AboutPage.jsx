@@ -7,8 +7,8 @@ import * as Icons from "lucide-react";
 
 
 const STATS_NUMERIC = [
-  { value: 500, suffix: "+", label: "Employees Deployed" },
-  { value: 25, suffix: "+", label: "Enterprise Clients" },
+  { value: 5000, suffix: "+", label: "Employees Deployed" },
+  { value: 30, suffix: "+", label: "Enterprise Clients" },
   { value: 6, suffix: "+", label: "Years of Delivery" },
   { value: 3, suffix: "", label: "India Offices" },
 ];
@@ -28,18 +28,18 @@ export default function AboutPage() {
       {/* STORY */}
       <section className="pb-16 md:pb-24 relative">
         <div className="container-x">
-          <div className="grid lg:grid-cols-12 gap-10 items-center">
+          <div className="grid lg:grid-cols-12 gap-10 items-Top">
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7 }}
-              className="lg:col-span-6"
+              className="lg:col-span-4"
             >
               <PlaceholderImage
-                img=""
+                src={IMAGES.about}
                 alt="Vegith Pinnacle operations"
-                aspect="aspect-[4/5]"
+                aspect="aspect-[2/3]"
                 label="Est. 2018"
               />
             </motion.div>
@@ -48,7 +48,7 @@ export default function AboutPage() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.7, delay: 0.1 }}
-              className="lg:col-span-6"
+              className="lg:col-span-8"
             >
               <div className="overline">Our Philosophy</div>
               <br />
@@ -58,15 +58,13 @@ export default function AboutPage() {
                 <span className="vp-gold-shimmer"> - Our Founder.</span>
               </h2>
               <p className="mt-6 text-white/70 text-lg leading-relaxed">
-                Welcome to Vegith Pinnacle Services Private LimitedFormerly known as
-                Vegith HR Services Pvt. Ltd.<br />
-                 <span>A Core Venture of the Vegith Group (Est. 2018)
-                <br /></span>
+                Welcome to Vegith Pinnacle Services Private Limited Formerly known as
+                Vegith HR Services Pvt. Ltd.
+                <span>A Core Venture of the Vegith Group (Est. 2018)</span>
                 <br />
                 Since 2018, Vegith Pinnacle Services has emerged as a premier, fast-growing support services
                 leader within the dynamic Vegith Group ecosystem. Our mission is clear: to engineer absolute
                 operational efficiency through tailor-made, business-centric solutions.
-                <br />
                 <br />
                  We streamline enterprise operations through two core execution engines:
                  world-class Facility Management and an all-inclusive Staffing & Compliance

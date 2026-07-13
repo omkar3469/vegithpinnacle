@@ -5,6 +5,7 @@ import ScrollToTop from "@/components/ScrollToTop";
 import Header from "@/components/sections/Header";
 import Footer from "@/components/sections/Footer";
 import { Toaster } from "sonner";
+import WhatsAppButton from "@/components/WhatsAppButton";
 
 export default function Layout() {
   return (
@@ -16,15 +17,16 @@ export default function Layout() {
       <main className="relative z-10 min-h-[70vh]">
         <Outlet />
       </main>
+      <WhatsAppButton />
       <Footer />
       <Toaster
         theme="dark"
         position="top-right"
         toastOptions={{
-          style: {
-            background: "#0b1d3a",
-            border: "1px solid rgba(212,168,67,0.4)",
-            color: "#ffffff",
+        style: {
+          background: "#0b1d3a",
+          border: "1px solid rgba(212,168,67,0.4)",
+          color: "#ffffff",
           },
         }}
       />

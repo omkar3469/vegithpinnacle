@@ -2,6 +2,7 @@
 // All image URLs point to editorial-quality Unsplash/Pexels photographs.
 // They are placeholders — swap the `img` value in each entry with the
 // client's own photographs after development.
+import about from "../img/Kailas_sir.png";
 
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
@@ -15,8 +16,8 @@ export const NAV_LINKS = [
 
 /* Homepage stats — counter animation */
 export const HOME_COUNTERS = [
-  { value: 500, suffix: "+", label: "Employees Deployed" },
-  { value: 25, suffix: "+", label: "Enterprise Clients" },
+  { value: 5000, suffix: "+", label: "Employees Deployed" },
+  { value: 30, suffix: "+", label: "Enterprise Clients" },
   { value: 3, suffix: "", label: "India Offices" },
   { value: 6, suffix: "+", label: "Years of Delivery" },
 ];
@@ -404,9 +405,8 @@ export const CONTACT = {
 export const IMAGES = {
   heroPoster:
     "https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=1600&q=80",
-  about:
-    "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&w=1600&q=80",
-  staffing:
+   about ,
+    staffing:
     "https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80",
   facility:
     "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1600&q=80",

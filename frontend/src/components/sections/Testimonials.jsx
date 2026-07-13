@@ -82,7 +82,7 @@ function TestimonialCard({ t, i }) {
       </p>
 
       <div className="mt-6 flex items-center gap-3">
-        <div className="relative shrink-0">
+        {/* <div className="relative shrink-0">
           <img
             src={t.avatar}
             alt=""
@@ -94,7 +94,7 @@ function TestimonialCard({ t, i }) {
             className="absolute inset-0 rounded-full pointer-events-none"
             style={{ boxShadow: "inset 0 0 0 1px rgba(212,168,67,0.35)" }}
           />
-        </div>
+        </div> */}
         <div className="min-w-0">
           <div
             className="text-white font-semibold text-[15px] truncate"

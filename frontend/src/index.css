@@ -218,11 +218,13 @@ body {
 }
 @media (min-width: 768px) {
     .section-pad {
-        padding-top: 128px;
-        padding-bottom: 128px;
+        padding-top: 20px;
+        padding-bottom: 20px;
     }
 }
-
+.pb-30px {
+    padding-bottom:40px;
+}
 .container-x {
     max-width: 1280px;
     margin-left: auto;
