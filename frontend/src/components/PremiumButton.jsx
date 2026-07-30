@@ -1,6 +1,9 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { Link } from "react-router-dom";
+
+const isInternalHref = (href) => href?.startsWith("/") && !href.startsWith("//");
 
 /**
  * Premium animated buttons — gradient navy→blue with gold inner border,
@@ -43,6 +46,13 @@ export function PrimaryButton({
   );
 
   if (href) {
+    if (isInternalHref(href)) {
+      return (
+        <Link to={href} data-testid={testid} onClick={onClick}>
+          {inner}
+        </Link>
+      );
+    }
     return (
       <a href={href} data-testid={testid} onClick={onClick}>
         {inner}
@@ -82,6 +92,13 @@ export function GhostButton({
   );
 
   if (href) {
+    if (isInternalHref(href)) {
+      return (
+        <Link to={href} data-testid={testid} onClick={onClick}>
+          {inner}
+        </Link>
+      );
+    }
     return (
       <a href={href} data-testid={testid} onClick={onClick}>
         {inner}

@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Vegith Pinnacle Services</title>
+    <!--
+      GitHub Pages serves this file for any URL that doesn't match a static
+      asset (e.g. a hard refresh or direct link to /about, /contact, etc.).
+      Since this is a client-side (React Router) SPA, we redirect back to
+      index.html and encode the original path/query/hash in the querystring
+      so index.html's inline script can restore it via history.replaceState
+      before React mounts. See https://github.com/rafgraph/spa-github-pages
+    -->
+    <script>
+      var l = window.location;
+      l.replace(
+        l.protocol + "//" + l.hostname + (l.port ? ":" + l.port : "") +
+        "/?redirect=" + encodeURIComponent(l.pathname + l.search + l.hash)
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

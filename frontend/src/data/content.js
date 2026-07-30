@@ -14,7 +14,7 @@ export const NAV_LINKS = [
   { label: "Services", to: "/services" },
   { label: "Compliance", to: "/compliance" },
   // { label: "Industries", to: "/industries" },
-  { label: "Industries", to: "/Industries" },
+  { label: "Industries", to: "/industries" },
   { label: "Contact", to: "/contact" },
 ];
 
