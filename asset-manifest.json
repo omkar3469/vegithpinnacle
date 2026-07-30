@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.b187a179.css",
-    "main.js": "/static/js/main.d2a15f9d.js",
+    "main.js": "/static/js/main.811d815a.js",
     "static/media/specialised-service.png": "/static/media/specialised-service.791f4ec02d569933650f.png",
     "static/media/Kailas_sir.png": "/static/media/Kailas_sir.6b57ad3edf06be1ee985.png",
     "static/media/technical.png": "/static/media/technical.b04cb396406269698f93.png",
@@ -10,10 +10,10 @@
     "static/media/logo.png": "/static/media/logo.358fc0a91ec6671f0019.png",
     "index.html": "/index.html",
     "main.b187a179.css.map": "/static/css/main.b187a179.css.map",
-    "main.d2a15f9d.js.map": "/static/js/main.d2a15f9d.js.map"
+    "main.811d815a.js.map": "/static/js/main.811d815a.js.map"
   },
   "entrypoints": [
     "static/css/main.b187a179.css",
-    "static/js/main.d2a15f9d.js"
+    "static/js/main.811d815a.js"
   ]
 }
