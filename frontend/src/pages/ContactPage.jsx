@@ -31,7 +31,10 @@ export default function ContactPage() {
       const res = await fetch(`${API_BASE}/api/contact`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(form),
+        body: JSON.stringify({
+  ...form,
+  website: "Vegith Pinnacle",
+}),
       });
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
