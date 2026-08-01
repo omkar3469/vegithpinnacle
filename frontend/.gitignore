@@ -11,6 +11,9 @@
 # production
 /build
 
+# original (uncompressed) media, kept locally only
+/raw-media
+
 # misc
 .DS_Store
 .env.local

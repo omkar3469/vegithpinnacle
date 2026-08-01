@@ -10,8 +10,42 @@ export default function Hero() {
     <section
       id="top"
       data-testid="hero-section"
-      className="relative min-h-screen w-full flex items-center pt-32 pb-16"
+      className="relative min-h-screen w-full flex items-center pt-32 pb-16 overflow-hidden"
     >
+      {/* Video background */}
+      <div className="absolute inset-0 z-0 overflow-hidden">
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          poster={IMAGES.heroPoster}
+          className="absolute inset-0 h-full w-full object-cover"
+          data-testid="hero-bg-video"
+        >
+          <source src="/videos/hero-bg.mp4" type="video/mp4" />
+        </video>
+
+        {/* Modern gradient overlay — brand navy/gold tint for text contrast */}
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "linear-gradient(180deg, rgba(6,13,30,0.55) 0%, rgba(6,13,30,0.8) 45%, rgba(4,9,26,0.96) 100%)",
+          }}
+        />
+        <div
+          aria-hidden
+          className="absolute inset-0"
+          style={{
+            background:
+              "radial-gradient(ellipse 90% 60% at 15% 10%, rgba(20,56,127,0.6) 0%, transparent 55%), radial-gradient(ellipse 70% 50% at 90% 85%, rgba(212,168,67,0.22) 0%, transparent 60%)",
+            mixBlendMode: "screen",
+          }}
+        />
+      </div>
+
       <div className="container-x relative z-10 w-full">
         <div className="grid lg:grid-cols-12 gap-10 xl:gap-16 items-center">
           {/* LEFT */}
