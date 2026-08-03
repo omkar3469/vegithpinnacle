@@ -43,7 +43,7 @@ export default function PageHero({
         >
           <Link
             to="/"
-            className="flex items-center gap-1 hover:text-[#14387f] transition-colors"
+            className="flex items-center gap-1 hover:text-[#d4a843] transition-colors"
           >
             <HomeIcon size={12} /> Home
           </Link>
@@ -53,12 +53,12 @@ export default function PageHero({
               {b.to ? (
                 <Link
                   to={b.to}
-                  className="hover:text-[#14387f] transition-colors"
+                  className="hover:text-[#d4a843] transition-colors"
                 >
                   {b.label}
                 </Link>
               ) : (
-                <span className="text-[#14387f]">{b.label}</span>
+                <span className="text-[#d4a843]">{b.label}</span>
               )}
             </span>
           ))}

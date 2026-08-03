@@ -8,9 +8,14 @@ import softservices from "../img/Services/soft-services.png";
 import technical from "../img/Services/technical.png";
 import specialisedservice from "../img/Services/specialised-service.png";
 
+// team//
+import ashishmishra from "../img/Ashish_mishra.jpeg";
+
+
 export const NAV_LINKS = [
   { label: "Home", to: "/" },
   { label: "About", to: "/about" },
+  { label: "Leadership", to: "/leadership" },
   { label: "Services", to: "/services" },
   { label: "Compliance", to: "/compliance" },
   // { label: "Industries", to: "/industries" },
@@ -150,6 +155,174 @@ export const COMPLIANCE_ITEMS = [
   { code: "INS", title: "Inspection Support", icon: "SearchCheck" },
   { code: "REG", title: "Online Registration", icon: "MonitorCheck" },
   { code: "RET", title: "Return Filing", icon: "ClipboardList" },
+];
+
+/* ---------- COMPLIANCE PAGE — six consolidated pillars (detail view) ---------- */
+export const COMPLIANCE_PILLARS = [
+  {
+    number: "01",
+    code: "PF",
+    title: "Provident Fund",
+    short:
+      "Complete EPFO lifecycle management — enrolment to withdrawal — without a single manual follow-up.",
+    description:
+      "We own the entire Provident Fund cycle for your workforce: enrolling every new joiner, verifying KYC, generating the monthly ECR, and settling the challan — so your HR team never chases a deadline.",
+    highlights: [
+      "UAN activation & KYC verification for every new joiner",
+      "Monthly ECR generation & timely challan payment",
+      "Transfer, withdrawal & advance claim assistance",
+      "Passbook reconciliation and discrepancy resolution",
+    ],
+    icon: "Banknote",
+  },
+  {
+    number: "02",
+    code: "ESIC",
+    title: "ESIC",
+    short:
+      "Employee State Insurance registration, contribution filing, and benefit support, fully managed.",
+    description:
+      "From IP number generation to half-yearly return filing, our team keeps your ESIC compliance current — so employees receive medical and cash benefits without delay.",
+    highlights: [
+      "New employee ESIC registration & IP number generation",
+      "Monthly contribution filing within statutory deadlines",
+      "Medical benefit & accident claim coordination",
+      "Half-yearly return filing and record audits",
+    ],
+    icon: "HeartPulse",
+  },
+  {
+    number: "03",
+    code: "PT / LWF",
+    title: "Professional Tax & Labour Welfare",
+    short:
+      "State-wise PT and LWF deductions, deposits, and filings — tracked across every jurisdiction.",
+    description:
+      "Professional Tax and Labour Welfare Fund rules differ by state and change often. We map every jurisdiction's slabs and due dates so deductions, deposits, and annual filings never slip.",
+    highlights: [
+      "State-wise PT slab mapping in payroll",
+      "LWF contribution calculation for employer & employee",
+      "On-time deposit & challan generation across states",
+      "Annual return filing and statutory record maintenance",
+    ],
+    icon: "ReceiptText",
+  },
+  {
+    number: "04",
+    code: "PAY",
+    title: "Payroll Compliance",
+    short:
+      "Accurate, statutory-first payroll — CTC structuring to full & final settlement.",
+    description:
+      "Our in-house payroll team runs your salary cycle end to end: statutory-compliant CTC structuring, TDS computation, and disbursement — so every payslip is accurate and every filing on time.",
+    highlights: [
+      "CTC structuring aligned to statutory norms",
+      "TDS computation & Form 16 issuance",
+      "Payslip generation & disbursement tracking",
+      "Full & final settlement processing",
+    ],
+    icon: "FileSpreadsheet",
+  },
+  {
+    number: "05",
+    code: "CLM / INS",
+    title: "Claims & Inspection Support",
+    short:
+      "One accountable team for employee claims and regulator inspections, PAN-India.",
+    description:
+      "When an employee needs to file a claim, or an inspector visits your site, our specialists step in as your single point of contact — managing documentation and standing in for you, anywhere in India.",
+    highlights: [
+      "PF, ESIC & gratuity claim filing and follow-up",
+      "PAN-India inspection representation",
+      "Notice response drafting & compliance documentation",
+      "Employee grievance resolution support",
+    ],
+    icon: "FolderCheck",
+  },
+  {
+    number: "06",
+    code: "REG / RET",
+    title: "Registration & Return Filing",
+    short:
+      "New establishment registrations and periodic statutory returns, always audit-ready.",
+    description:
+      "Whether you're opening a new location or maintaining an existing one, we handle every statutory registration and periodic return filing — keeping your enterprise audit-ready at all times.",
+    highlights: [
+      "New establishment PF / ESIC / PT registration",
+      "Monthly, quarterly & annual return filing",
+      "Digital record maintenance with full audit trail",
+      "Renewal tracking via a shared compliance calendar",
+    ],
+    icon: "MonitorCheck",
+  },
+];
+
+/* ---------- LEADERSHIP ----------
+   `linkedin` and `email` are empty placeholders — fill in each leader's
+   real profile URL / address directly below to make their card icons
+   link somewhere; until then the icons render but go nowhere. */
+export const LEADERS = [
+  {
+    photo: about,
+    initials: "—",
+    name: "Kailash Sharma",
+    honorific: "",
+    role: "Chairman & Founder",
+    qualification: "Chartered Accountant (CA)",
+    experience: "35+ Years",
+    bio: "The visionary architect of the firm. With over three and a half decades of practice as a Chartered Accountant, Kailash Sir has built the foundational philosophy of integrity-first advisory that defines the organisation today.",
+    focus: ["Strategy", "Governance", "Client Relationships"],
+    linkedin: "",
+    email: "",
+  },
+  {
+    photo: null,
+    initials: "L2",
+    name: "Ojasvi Sharma",
+    role: "DIRECTOR",
+    qualification: "Mechanical Engineer",
+    experience: "5 Years",
+    bio: "Blends an engineer's precision with operational rigour. Drives process design and cross-functional execution across service lines.",
+    focus: ["Operations","Process Design"],
+    linkedin: "https://www.linkedin.com/in/ojasvi-sharma-32336b107/",
+    email: "Ojasvi@Chilzo.com",
+  },
+  {
+    photo: null,
+    initials: "L3",
+    name: "Dikshita Sharma",
+    role: "DIRECTOR",
+    qualification: "B.Tech & MS",
+    experience: "6 Years",
+    bio: "Combines technical depth with global perspective. Leads strategic initiatives and technology-led compliance innovation.",
+    focus: ["Strategy","Technology","Innovation"],
+    linkedin: "",
+    email: "dikshita@chilzo.com",
+  },
+  {
+    photo: ashishmishra,
+    initials: "L4",
+    name: "Ashish Mishra",
+    role: "GROUP CFO",
+    qualification: "Chartered Accountant (CA)",
+    experience: "10+ Years",
+    bio: "Steward of the firm's financial architecture. Oversees group finance, treasury and risk with a decade of decisive leadership.",
+    focus: ["Finance","Risk","Treasury"],
+    linkedin: "https://www.linkedin.com/in/caashishmishra/",
+    email: "ashish.mishra@vegithglobal.com",
+  },
+  {
+    photo: null,
+    initials: "L5",
+    name: "Sneha Goasvi",
+    role: "BUSINESS HEAD",
+    qualification: "Masters in Labour Studies",
+    experience: "18+ Years",
+    bio: "The bridge between statute and strategy. Nearly two decades in labour and workforce advisory power our client engagements end-to-end.",
+    focus: ["Labour Advisory","Client Engagement"],
+    linkedin: "https://www.linkedin.com/in/sneha-gosavi-3b544626/",
+    email: "sneha.gosavi@vegithglobal.com",
+  },
 ];
 
 /* ---------- PROCESS ---------- */
@@ -400,6 +573,16 @@ export const CONTACT = {
   email: "Hr@vegithglobal.com",
   website: "www.vegithhr.com",
 };
+
+/* ---------- SOCIAL ----------
+   Empty placeholders — fill in each real profile URL below to make the
+   footer's social icons link somewhere; until then they render but go
+   nowhere. */
+export const SOCIAL_LINKS = [
+  { label: "LinkedIn", icon: "Linkedin", href: "" },
+  { label: "Instagram", icon: "Instagram", href: "" },
+  { label: "Facebook", icon: "Facebook", href: "" },
+];
 
 /* ---------- SIGNATURE IMAGERY ---------- */
 export const IMAGES = {

@@ -13,6 +13,7 @@ export function PlaceholderImage({
   alt = "",
   aspect = "aspect-[16/9]",
   label,
+  initials,
   className = "",
   overlay = "gradient",
   rounded = "rounded-3xl",
@@ -37,6 +38,17 @@ export function PlaceholderImage({
             loaded ? "opacity-100 scale-100" : "opacity-0 scale-105"
           } group-hover:scale-[1.04]`}
         />
+      )}
+
+      {!src && initials && (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <span
+            className="font-display text-4xl text-[#d4a843]/70"
+            aria-hidden="true"
+          >
+            {initials}
+          </span>
+        </div>
       )}
 
       {overlay === "gradient" && (

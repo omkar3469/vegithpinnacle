@@ -12,7 +12,7 @@ export default function ClientsPage() {
         titleGold="ambitious brands."
         tagline="Enterprises that treat workforce and facility excellence as a strategic advantage."
         breadcrumbs={[{ label: "Clients" }]}
-        image={IMAGES.about}
+        // image={IMAGES.about}
         testid="clients-hero"
       />
 

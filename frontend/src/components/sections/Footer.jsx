@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
-import { NAV_LINKS, CONTACT } from "@/data/content";
+import * as Icons from "lucide-react";
+import { NAV_LINKS, CONTACT, SOCIAL_LINKS } from "@/data/content";
 
 export default function Footer() {
   return (
@@ -29,6 +30,25 @@ export default function Footer() {
               Integrated Manpower &amp; Facility Management, engineered for
               India&apos;s most ambitious workplaces.
             </p>
+
+            <div className="mt-6 flex items-center gap-3">
+              {SOCIAL_LINKS.map((s) => {
+                const Icon = Icons[s.icon] || Icons.Link;
+                return (
+                  <a
+                    key={s.label}
+                    href={s.href || "#"}
+                    target={s.href ? "_blank" : undefined}
+                    rel={s.href ? "noopener noreferrer" : undefined}
+                    aria-label={s.label}
+                    data-testid={`footer-social-${s.label.toLowerCase()}`}
+                    className="w-9 h-9 rounded-full flex items-center justify-center border border-white/10 text-white/70 hover:text-[#d4a843] hover:border-[#d4a843]/50 transition-colors"
+                  >
+                    <Icon size={15} />
+                  </a>
+                );
+              })}
+            </div>
           </div>
 
           <div className="md:col-span-3">

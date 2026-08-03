@@ -3,6 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Layout from "@/components/Layout";
 import HomePage from "@/pages/HomePage";
 import AboutPage from "@/pages/AboutPage";
+import LeadershipPage from "@/pages/LeadershipPage";
 import ServicesPage from "@/pages/ServicesPage";
 import CompliancePage from "@/pages/CompliancePage";
 // import IndustriesPage from "@/pages/IndustriesPage";
@@ -17,6 +18,7 @@ export default function App() {
         <Route element={<Layout />}>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<AboutPage />} />
+          <Route path="/leadership" element={<LeadershipPage />} />
           <Route path="/services" element={<ServicesPage />} />
           <Route path="/compliance" element={<CompliancePage />} />
           {/* <Route path="/industries" element={<IndustriesPage />} /> */}
