@@ -1,19 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.56fca25e.css",
-    "main.js": "/static/js/main.cc94fa21.js",
+    "main.css": "/static/css/main.453a249e.css",
+    "main.js": "/static/js/main.8fe78f68.js",
     "static/media/specialised-service.png": "/static/media/specialised-service.791f4ec02d569933650f.png",
     "static/media/Kailas_sir.png": "/static/media/Kailas_sir.6b57ad3edf06be1ee985.png",
     "static/media/technical.png": "/static/media/technical.b04cb396406269698f93.png",
     "static/media/staffing.png": "/static/media/staffing.991e76589291c5dc70c0.png",
     "static/media/soft-services.png": "/static/media/soft-services.7a04885af42ff6d8b4ac.png",
     "static/media/logo.png": "/static/media/logo.358fc0a91ec6671f0019.png",
+    "static/media/Ashish_mishra.jpeg": "/static/media/Ashish_mishra.ce1abc11b92bbff95b52.jpeg",
     "index.html": "/index.html",
-    "main.56fca25e.css.map": "/static/css/main.56fca25e.css.map",
-    "main.cc94fa21.js.map": "/static/js/main.cc94fa21.js.map"
+    "main.453a249e.css.map": "/static/css/main.453a249e.css.map",
+    "main.8fe78f68.js.map": "/static/js/main.8fe78f68.js.map"
   },
   "entrypoints": [
-    "static/css/main.56fca25e.css",
-    "static/js/main.cc94fa21.js"
+    "static/css/main.453a249e.css",
+    "static/js/main.8fe78f68.js"
   ]
 }
